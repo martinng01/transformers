@@ -31,7 +31,7 @@ model.eval()
 
 @app.get("/")
 async def root():
-    pass
+    return {'status': 'online'}
 
 
 @app.post('/predict')
