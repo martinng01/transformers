@@ -22,6 +22,19 @@ Transformer Decoder
   - **Layer Norm + Residual Connections**
 - **Linear Out**
 
+## Example training inputs
+
+```
+x =   1,   4,   7,   8,  12,  17,  26,  40,  63, 100
+      |    |    |    |    |    |    |    |    |    |
+      v    v    v    v    v    v    v    v    v    v
+y =   4,   7,   8,  12,  17,  26,  40,  63, 100,   2
+
+At position i, looks at x[:i] to predict output y
+```
+
+During training, the accuracies of first three positions are ignored `[<SOS>, SEED_1, SEED_2]` since those are given while generating the sequence.
+
 ## Example
 
 Seed: `[1, 4]`
